@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<script src="https://kit.fontawesome.com/2c8e1e6a2d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="calculatorstyle.css">
+	<title>calculator</title>
+
+</head> 
+<body>
+	<div class="container">
+		<div class="calculator">
+			<input type="text" placeholder="0" id="i1">
+			<button onclick="clr()">CL</button>
+			<button onclick="del()">DEL</button>
+			<button onclick="display('%')">%</button>
+			<button onclick="display('/')">/</button>
+			<button onclick="display('7')">7</button>
+			<button onclick="display('8')">8</button>
+			<button onclick="display('9')">9</button>
+			<button onclick="display('*')">*</button>
+			<button onclick="display('4')">4</button>
+			<button onclick="display('5')">5</button>
+			<button onclick="display('6')">6</button>
+			<button onclick="display('-')">-</button>
+			<button onclick="display('1')">1</button>
+			<button onclick="display('2')">2</button>
+			<button onclick="display('3')">3</button>
+			<button onclick="display('+')">+</button>
+			<button onclick="display('.')">.</button>
+			<button onclick="display('0')">0</button>
+			<button onclick="calculator()" class="equal">=</button>
+		</div>
+	</div>
+	<script>
+
+		function display(n)
+		{
+			var t=document.getElementById('i1').value;
+			document.getElementById('i1').value=t+n;
+		}
+
+		function del()
+		{
+
+			var t=document.getElementById('i1').value;
+			t=t.substring(0,t.length-1);
+			document.getElementById('i1').value=t;
+		} 
+		function calculator()
+		{
+			var t=document.getElementById('i1').value;
+			document.getElementById('i1').value=eval(t);
+		}
+		function clr()
+		{
+
+			var t=document.getElementById('i1').value;
+			t=t.substring(0);
+			
+			document.getElementById('i1').value=0;				
+			
+		}
+	</script> 
+</body> 
+</html>
